@@ -173,8 +173,22 @@ img{
 
 .received-message{
     background-color: #DDD5CD;
+    align-self: flex-start;
 }
 
 .sent-message{
     background-color: #D5F9BA;
+    align-self: flex-end;
+}
+
+.message{
+    min-width: 120px;
+    max-width: 40%;
+    border-radius: 10px;
+}
+
+.chat{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
 }

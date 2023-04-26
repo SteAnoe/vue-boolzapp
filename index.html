@@ -73,8 +73,10 @@
             </div>
           </div>
           <div id="chat-box">
-            <div v-for="(elem) in contacts[contact].messages" :class="elem.status + `-message`">
-              {{ elem.message }}      
+            <div class="w-75 h-100 chat py-2">
+              <div v-for="(elem) in contacts[contact].messages" class="message p-3 mb-1" :class="elem.status + `-message`">
+                {{ elem.message }}      
+              </div>
             </div>
           <div id="input-text" class="d-flex justify-content-between p-2">
             <div id="emote" class="d-flex justify-content-center align-items-center">
