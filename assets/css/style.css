@@ -17,7 +17,6 @@ img{
 }
 
 .container{
-    border: 1px solid red;
     height: 90%;
     padding: 0;
 }
@@ -90,7 +89,13 @@ img{
 }
 
 .contact{
-    background-color: #E9EBEB;
+    background-color: white;
+    cursor: pointer;
+    border-top: 1px solid gray;
+}
+
+.active{
+    background-color: lightgray;
 }
 
 .avatar{
@@ -111,8 +116,9 @@ img{
     font-size: 12px;
 }
 
+#profile,
 #contact{
-    height: 7.9%;
+    height: 8vh;
 }
 
 #contact img{

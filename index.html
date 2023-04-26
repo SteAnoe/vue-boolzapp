@@ -43,7 +43,7 @@
             </div>
           </div>
           <div id="contacts">
-            <div v-for="(elem, index) in contacts" :key="index" class="contact d-flex justify-content-between p-3" @click="changeContact(index)">
+            <div v-for="(elem, index) in contacts" :key="index" class="contact d-flex justify-content-between p-3" @click="changeContact(index)" :class="(contact == index) ? 'active' : '' ">
               <div class="d-flex align-items-center avatar">
                 <img v-bind:src="elem.avatar" alt="">   
               </div>
