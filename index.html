@@ -16,10 +16,77 @@
     <div class="vh-100 vw-100 box d-flex">
       <div class="container d-flex">
         <div id="l-box">
-
+          <div id="profile" class="d-flex justify-content-between p-3">
+            <div class="d-flex self-profile">
+              <img src="./assets/img/avatar_io.jpg" alt="">  
+              <div class="ps-1">Sofia</div>   
+            </div>
+            <div class="d-flex justify-content-between profile-icons"> 
+              <i class="fa-solid fa-circle-notch"></i>
+              <i class="fa-solid fa-message"></i>
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+          </div>
+          <div id="notifiche" class="d-flex p-3">
+            <div class="round d-flex justify-content-center align-items-center">
+              <i class="fa-solid fa-bell-slash"></i>
+            </div>
+            <div class="ps-1" id="notifiche-text">
+              <div>Ricevi notifiche di nuovi messaggi</div>
+              <div id="link">Attiva notifiche desktop</div>
+            </div>
+          </div>
+          <div id="search" class="p-1">
+            <div class="input-group flex-nowrap">
+              <span class="input-group-text" id="addon-wrapping"><i class="fa-solid fa-magnifying-glass"></i></span>
+              <input id="search" type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="addon-wrapping">
+            </div>
+          </div>
+          <div id="contacts">
+            <div v-for="(elem, index) in contacts" :key="index" class="contact d-flex justify-content-between p-3">
+              <div class="d-flex align-items-center avatar">
+                <img v-bind:src="elem.avatar" alt="">   
+              </div>
+              <div class="nome ps-3">
+                  <div>{{elem.name}}</div>
+                  <div>{{elem.messages[elem.messages.length-1].message}}</div>
+              </div> 
+              <div class="d-flex justify-content-between align-items-center orario"> 
+                <div>{{elem.messages[elem.messages.length-1].date}}</div>
+              </div>
+            </div>
+          </div>
         </div>
         <div id="r-box">
-
+          <div id="contact" class="d-flex justify-content-between p-3">
+            <div id="active-contact" class="d-flex">
+              <img v-bind:src="contacts[contact].avatar" alt="">  
+            </div>
+              <div id="active-nome">
+                <div>{{contacts[contact].name}}</div>
+                <div>{{contacts[contact].messages[contacts[contact].messages.length-1].date}}</div>
+              </div> 
+            <div id="active-icons" class="d-flex justify-content-between"> 
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <i class="fa-solid fa-paperclip"></i>
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+          </div>
+          <div id="chat-box">
+            <div v-for="(elem) in contacts[contact].messages" :class="elem.status + `-message`">
+              {{ elem.message }}      
+            </div>
+          <div id="input-text" class="d-flex justify-content-between p-2">
+            <div id="emote" class="d-flex justify-content-center align-items-center">
+              <i class="fa-regular fa-face-smile"></i>
+            </div>
+            <div id="input-bar" class="d-flex justify-content-center align-items-center">
+              <input type="text" class="w-100 h-100 input-bar" placeholder="Scrivi un messaggio">
+            </div> 
+            <div id="microphone" class="d-flex justify-content-center align-items-center"> 
+              <i class="fa-solid fa-microphone"></i>
+            </div>
+          </div>
         </div>
       </div>
     </div>

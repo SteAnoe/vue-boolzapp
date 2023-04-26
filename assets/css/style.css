@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+img{
+    width: 50%;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
 .box{
     background: rgb(0, 150, 136);
     background: linear-gradient(180deg,rgb(0, 150, 136) 15%, rgb(218, 219, 210) 15%); 
@@ -18,12 +24,157 @@
 
 #l-box{
     width: 30%;
-    background-color: blue;
     height: 100%;
+    background-color: #FFFFFF;
 }
 
 #r-box{
     width: 70%;
-    background-color: red;
+    background-image: url(../img/mine.jpg);
     height: 100%;
+    position: relative;
+}
+
+#profile,
+#contact{
+    background-color: #EAEAEA;
+}
+
+.fa-solid{
+    color: #B1B1B1;
+}
+
+.self-profile{
+    width: 20%;
+    align-items: center;
+}
+
+.profile-icons{
+    width: 20%;
+    align-items: center;
+}
+
+#notifiche{
+    background-color: #8DDAFC;
+}
+
+#notifiche-text{
+    font-size: 12px;
+}
+
+.round{
+    background-color: white;
+    border-radius: 50%;
+    width: 10%;
+}
+
+.fa-bell-slash{
+    color: #8DDAFC;
+}
+
+#link{
+    text-decoration: underline;
+    color: grey;
+    cursor: pointer;
+}
+
+#addon-wrapping{
+    background-color: white;
+    border-right: none;
+}
+
+#search{
+    border-left: none;
+    font-size: 12px;
+    background-color: #FFFFFF;
+}
+
+.contact{
+    background-color: #E9EBEB;
+}
+
+.avatar{
+    width: 10%;
+}
+
+.avatar img{
+    width: 100%;
+}
+
+.nome{
+    width: 75%;
+    font-size: 12px;
+}
+
+.orario{
+    width: 15%;
+    font-size: 12px;
+}
+
+#contact{
+    height: 7.9%;
+}
+
+#contact img{
+    width: 80%;
+}
+
+#active-contact{
+    width: 5%;
+    align-items: center;
+}
+
+#active-icons{
+    width: 8%;
+    align-items: center;
+}
+
+#active-nome{
+    width: 87%;
+    font-size: 12px;
+}
+
+#chat-box{
+    height: 84.2%;
+}
+
+#input-text{
+    height: 7.9%;
+    background-color: #E9EBEB;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+#emote,
+#microphone{
+    width: 10%;
+}
+
+#emote i,
+#microphone i{
+    font-size: 30px;
+    text-align: center;
+    color: grey;
+}
+
+#input-bar{
+    width: 80%;
+}
+
+::placeholder{
+    padding-left: 20px;
+}
+
+.input-bar{
+    border: none;
+    border-radius: 5px;
+}
+
+.received-message{
+    background-color: #DDD5CD;
+}
+
+.sent-message{
+    background-color: #D5F9BA;
 }
