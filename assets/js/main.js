@@ -3,7 +3,9 @@ const { createApp } = Vue
 createApp({
   data() {
     return {
-        contact: 5,
+        filterInput: '',
+        valueInput: '',
+        contact: 0,
         contacts: [
             {
                 name: 'Michele',
@@ -175,7 +177,27 @@ createApp({
   methods: {
     changeContact(index){
         this.contact = index
-    }
+    },
+    addMessage(){
+        if(this.valueInput != ''){
+            let sentMessage = {
+                date: '10/01/2020 15:30:55',
+                message: this.valueInput,
+                status: 'sent'
+            }
+            this.contacts[this.contact].messages.push(sentMessage)
+            this.valueInput = '' 
+            setTimeout( ()=> { 
+                let receivedMessage = {
+                    date: '10/01/2020 15:30:55',
+                    message: 'ok',
+                    status: 'received'
+                }
+                this.contacts[this.contact].messages.push(receivedMessage)
+                this.valueInput = ''
+            }, 1000 )  
+        }
+    },
   }
 }).mount('#app')
 

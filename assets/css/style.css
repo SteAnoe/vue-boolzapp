@@ -142,6 +142,7 @@ img{
 
 #chat-box{
     height: 84.2%;
+    overflow-y: scroll;
 }
 
 #input-text{

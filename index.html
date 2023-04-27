@@ -39,21 +39,24 @@
           <div id="search" class="p-1">
             <div class="input-group flex-nowrap">
               <span class="input-group-text" id="addon-wrapping"><i class="fa-solid fa-magnifying-glass"></i></span>
-              <input id="search" type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="addon-wrapping">
+              <input id="search" type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="addon-wrapping" v-model="filterInput" :key="contact.name">
             </div>
           </div>
           <div id="contacts">
-            <div v-for="(elem, index) in contacts" :key="index" class="contact d-flex justify-content-between p-3" @click="changeContact(index)" :class="(contact == index) ? 'active' : '' ">
-              <div class="d-flex align-items-center avatar">
-                <img v-bind:src="elem.avatar" alt="">   
-              </div>
-              <div class="nome ps-3">
+            
+            <div v-for="(elem, index) in contacts" :key="index" @click="changeContact(index)" :class="(contact == index) ? 'active' : '' ">
+              <div class="contact d-flex justify-content-between p-3" v-if="elem.name.toLowerCase().includes(filterInput)">
+                <div class="d-flex align-items-center avatar">
+                  <img v-bind:src="elem.avatar" alt="">   
+                </div>
+                <div class="nome ps-3">
                   <div>{{elem.name}}</div>
                   <div>{{elem.messages[elem.messages.length-1].message}}</div>
+                </div> 
+                <div class="d-flex justify-content-between align-items-center orario"> 
+                  <div>{{elem.messages[elem.messages.length-1].date}}</div>
+                </div>
               </div> 
-              <div class="d-flex justify-content-between align-items-center orario"> 
-                <div>{{elem.messages[elem.messages.length-1].date}}</div>
-              </div>
             </div>
           </div>
         </div>
@@ -83,7 +86,7 @@
               <i class="fa-regular fa-face-smile"></i>
             </div>
             <div id="input-bar" class="d-flex justify-content-center align-items-center">
-              <input type="text" class="w-100 h-100 input-bar" placeholder="Scrivi un messaggio">
+              <input type="text" v-model="valueInput" class="w-100 h-100 input-bar" placeholder="Scrivi un messaggio"  @KeyUp.enter="addMessage()">
             </div> 
             <div id="microphone" class="d-flex justify-content-center align-items-center"> 
               <i class="fa-solid fa-microphone"></i>
