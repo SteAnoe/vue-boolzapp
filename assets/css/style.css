@@ -199,3 +199,24 @@ img{
     flex-direction: column;
     margin: auto;
 }
+
+.fa-chevron-down{
+    bottom: 5px;
+    right: 5px;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.menu-msg{
+    background-color: white;
+    bottom: -65px;
+    right: -55px;
+    cursor: pointer;
+    font-size: 10px;
+    z-index: 10;
+    max-width: 60px;
+}
+
+.border-bot{
+    border-bottom: 1px solid black;
+}
